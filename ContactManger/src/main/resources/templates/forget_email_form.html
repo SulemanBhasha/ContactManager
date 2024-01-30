@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"  xmlns="http://www.thymeleaf.org"
+ th:replace="base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">this is login page</title>
+</head>
+<body>
+	
+	<section class="" >
+		<div id="login" class="shadow-lg   ">
+        
+        <div class="container ">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12 " style="height: 200px;">
+						<div th:if="${session.message}" th:classappend="alert-warning" class="alert" role="alert">
+						 
+						  <button type="button" class="close" data-dismiss="alert">x</button>
+						  <p class="text-black" th:text="${session.message}"></p>
+						  
+						</div>
+						
+<!--                    forgot email form   --> 
+						<h3 class="text-center" style="color: black;">Forgot password email</h3>
+                   			
+                   			<form action="" th:action="@{/send-otp}" method="post">
+								   <div class="form-group">
+									   <input required name="email" type="email" placeholder="enter regisred email here" class="form-control" />
+								   		
+								  <div class="container text-center mt-3">
+									   <button type="submit" class="btn btn-warning"> submit</button>
+								  </div>
+								   
+								   </div>
+							   </form>
+							
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	 </section>
+</body>
+</html>
